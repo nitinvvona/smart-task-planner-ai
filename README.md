@@ -1,10 +1,8 @@
-Here's a comprehensive README.md file for your Smart Task Planner AI project:
-
-```markdown
 # 🎯 Smart Task Planner AI
 
 An intelligent task management application powered by Google's Gemini AI that transforms your goals into actionable, organized task plans. Built with React, TypeScript, and Express.
 
+Demo Video Link: https://drive.google.com/file/d/12urd01OByKFtvh1tGGmmhOs6O3yQGiNy/view?usp=drive_link
 ## ✨ Features
 
 ### 🤖 AI-Powered Task Generation
