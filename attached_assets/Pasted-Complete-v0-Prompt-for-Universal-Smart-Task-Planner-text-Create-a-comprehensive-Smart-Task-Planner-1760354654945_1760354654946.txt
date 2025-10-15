@@ -1,0 +1,386 @@
+Complete v0 Prompt for Universal Smart Task Planner
+
+
+text
+Create a comprehensive Smart Task Planner web application using Next.js 15, React, TypeScript, Tailwind CSS, and shadcn/ui components.
+
+=== PRODUCT OVERVIEW ===
+An AI-powered universal task planning system that breaks down ANY user goal (travel planning, booking services, organizing events, learning projects, etc.) into actionable tasks with timelines, dependencies, and priorities using LLM reasoning.
+
+=== CORE FUNCTIONALITY ===
+
+INPUT FLOW:
+1. Goal Input Section:
+   - Large textarea (minimum 3 rows) with placeholder: "Enter your goal (e.g., 'Find lowest-cost turf near me', 'Book skilled dentist appointment', 'Plan trekking trip to hills')"
+   - Optional fields below textarea:
+     * Timeframe selector (dropdown: This week, 2 weeks, 1 month, 3 months, Custom)
+     * Budget constraint input (number field with currency)
+     * Additional constraints textarea
+   - Character counter showing 0/500
+   - Prominent "Generate Plan" button with loading spinner state
+   - Template gallery button to show pre-made goal templates
+
+2. Template Gallery Modal:
+   - Grid layout showing template cards for:
+     * Travel Planning, Health & Medical, Sports & Recreation
+     * Home Services, Event Planning, Learning & Development
+   - Click template to auto-fill goal input
+
+OUTPUT DISPLAY:
+3. Dashboard/Homepage:
+   - Header with logo, search bar, profile avatar, theme toggle
+   - Quick stats cards: Total Plans, Active Plans, Completed Tasks, Tasks Due Today
+   - Card grid displaying all user plans with:
+     * Plan thumbnail/icon based on category
+     * Plan title (e.g., "Trip to New Jersey")
+     * Category tag with color coding
+     * Completion progress bar with percentage
+     * Status badge (Not Started/In Progress/Completed/Overdue)
+     * Created date and deadline
+     * Star icon to favorite
+     * Three-dot menu for actions (Edit, Duplicate, Archive, Delete)
+   
+4. Filters & Search (Top of Dashboard):
+   - Global search bar with magnifying glass icon
+   - Category filter dropdown (All, Travel, Health, Sports, Services, Events, Learning)
+   - Sort dropdown (Date Created, Deadline, Priority, Alphabetical)
+   - "Starred Only" toggle switch
+   - Clear all filters button
+
+5. Individual Plan View (When clicking a plan card):
+
+   HEADER SECTION:
+   - Breadcrumb: Dashboard > [Category] > [Plan Name]
+   - Plan title (editable inline)
+   - Category badge
+   - Progress summary: "12 of 18 tasks completed (67%)"
+   - Action buttons row:
+     * Download PDF (primary button, prominent)
+     * Export dropdown (CSV, JSON)
+     * Share button
+     * Archive button
+   
+   VIEW MODE TOGGLES:
+   - Icon buttons to switch between:
+     * List View (default)
+     * Kanban Board
+     * Calendar View
+     * Timeline/Gantt View
+   
+   FILTER PANEL (Collapsible sidebar):
+   - Status checkboxes: All, Not Started, In Progress, Completed, Overdue
+   - Priority toggles: High, Medium, Low
+   - Date range picker (From - To)
+   - Search within plan input
+   - Clear filters button
+   
+   LIST VIEW DISPLAY:
+   - Phase accordions (collapsible sections):
+     * Phase header showing: Phase name, task count, completion percentage
+     * Expand/collapse chevron icon
+   - Task cards within each phase:
+     * Checkbox (large, left side)
+     * Task name (bold, strikethrough when complete)
+     * Priority badge (Red=High, Yellow=Medium, Green=Low)
+     * Description (collapsible, show first 50 chars with "Read more")
+     * Estimated time badge (e.g., "2.5 hours")
+     * Deadline with countdown (e.g., "Oct 20, 2025 • 5 days left")
+     * Dependency indicator icon with tooltip showing dependent task names
+     * Quick action icons (Edit pencil, Delete trash)
+     * Status dropdown (Not Started, In Progress, Completed)
+   - Drag handles for manual reordering
+   
+   KANBAN BOARD VIEW:
+   - Three columns: "To Do", "In Progress", "Done"
+   - Task cards draggable between columns
+   - Column headers show task count
+   - Cards display: title, priority badge, deadline, estimated time
+   
+   CALENDAR VIEW:
+   - Monthly calendar grid
+   - Tasks shown as colored dots on deadline dates
+   - Click date to see task list for that day
+   - Color coding by priority
+   - Navigation arrows for previous/next month
+   
+   TIMELINE/GANTT VIEW:
+   - Horizontal timeline with date markers
+   - Task bars showing duration (start to deadline)
+   - Color-coded by priority
+   - Dependency arrows connecting related tasks
+   - Critical path highlighted in bold/different color
+   - Hover tooltip showing task details
+   - Zoom controls (Day, Week, Month view)
+
+6. PDF Export Modal (When clicking Download PDF):
+   - Modal overlay with preview
+   - Format selection radio buttons:
+     * Detailed Report (all task info + descriptions)
+     * Summary Checklist (task names + checkboxes only)
+     * Timeline View (Gantt chart visualization)
+     * Budget Report (costs breakdown if applicable)
+   - Content checkboxes to include/exclude:
+     * Executive Summary
+     * Task List by Phase
+     * Timeline Chart
+     * Dependency Graph
+     * Budget/Cost Tracking
+     * Notes
+   - PDF file name input (pre-filled with plan name)
+   - Download button (generates and downloads PDF)
+   - Preview pane showing PDF layout
+
+7. Mobile Responsive Design:
+   - Bottom navigation bar with icons:
+     * Dashboard, Active Plans, Calendar, Profile
+   - Hamburger menu for additional options
+   - Cards stack vertically on mobile
+   - Swipe gestures:
+     * Swipe right on task to mark complete
+     * Swipe left on task to delete
+   - Pull-to-refresh on dashboard
+   - Collapsible filter panels to save space
+   - Touch-friendly button sizes (minimum 44px)
+
+8. Interactive Features:
+   - Inline editing: Click task name/description to edit without modal
+   - Bulk selection: Checkbox mode to select multiple tasks
+   - Bulk actions dropdown: Mark Complete, Change Priority, Delete
+   - Auto-save with "Saved" indicator
+   - Undo toast for accidental deletions
+   - Drag-and-drop task reordering in list view
+   - Keyboard shortcuts tooltip (Press ? to show)
+
+9. Visual Feedback:
+   - Loading skeletons while generating plan (animated pulse effect)
+   - Toast notifications:
+     * "Task completed ✓"
+     * "Plan saved"
+     * "PDF downloaded successfully"
+     * "Plan archived"
+   - Confetti animation when completing a phase
+   - Smooth transitions for all state changes
+   - Empty state illustrations with helpful text:
+     * "No plans yet. Create your first plan!"
+     * "Try: Find gym with lowest membership near me"
+     * "Or: Plan weekend camping trip"
+   - Deadline alerts: Red badge for overdue, orange for due today
+   - Badge counters on navigation (e.g., "5" on Active Plans)
+
+10. Settings Panel (Sidebar or Modal):
+    - Theme selector: Light, Dark, Auto
+    - Font size slider (Small, Medium, Large)
+    - Default view preference dropdown
+    - Task detail level: Brief, Detailed, Comprehensive
+    - Time estimate adjustment: Slower, Average, Faster
+    - Notification preferences toggles
+    - Archive management section
+    - Account settings link
+
+11. Additional UI Components:
+    - Cost tracker widget (if plan involves budget):
+      * Progress bar showing spent vs total budget
+      * Line items with costs
+      * Running total
+    - Comparison table widget (for research tasks):
+      * Embedded table comparing options
+      * Sortable columns
+      * Highlight recommended option
+    - Map integration placeholder (for location-based tasks):
+      * Embedded map showing locations
+      * Distance and travel time indicators
+    - Rating/review display (for service bookings):
+      * Star ratings
+      * Review snippets
+      * Source attribution
+    - Booking action buttons:
+      * "Call Now", "Visit Website", "Book Appointment"
+      * Open in new tab with appropriate icons
+
+=== DESIGN SPECIFICATIONS ===
+
+COLOR SCHEME:
+- Primary: Purple-blue gradient (#6366f1 to #8b5cf6)
+- Success: Green (#22c55e)
+- Warning: Yellow/Orange (#f59e0b)
+- Danger: Red (#ef4444)
+- Neutral: Gray scale (#f9fafb to #111827)
+- Background: White (light mode), #0f172a (dark mode)
+
+VISUAL STYLE:
+- Glassmorphism cards with backdrop-blur
+- Soft shadows (shadow-lg, shadow-xl)
+- Rounded corners (rounded-lg, rounded-xl)
+- Smooth animations (transition-all duration-300)
+- Gradient accent elements
+- Clean, modern spacing (generous padding/margins)
+
+TYPOGRAPHY:
+- Headings: Inter or Poppins font, semibold/bold
+- Body: Inter or System UI, regular weight
+- Monospace: For time estimates and dates
+- Accessible contrast ratios (WCAG AA minimum)
+
+ICONS:
+- Use lucide-react icon library
+- Consistent icon sizing
+- Icon + text labels for important actions
+- Icon-only for secondary actions with tooltips
+
+   - "Advanced Options ▼" collapsible section (collapsed by default):
+     * Small text link/button with chevron icon
+     * When clicked, expands to show:
+       
+       A. TIMEFRAME SELECTOR (Dropdown):
+       - This week
+       - 2 weeks
+       - 1 month
+       - 3 months
+       - 6 months
+       - 1 year
+       - Custom (opens date picker)
+       
+       B. BUDGET CONSTRAINT (Number input with currency dropdown):
+       - Currency options: USD, INR, EUR, GBP, AUD, CAD
+       - "No budget limit" checkbox option
+       
+       C. PRIORITY FOCUS (Multi-select checkboxes - up to 3):
+       Select what matters most for this plan:
+       ☐ Speed/Time (Complete as quickly as possible)
+       ☐ Cost Efficiency (Stay within tight budget)
+       ☐ Quality/Excellence (Best possible outcome)
+       ☐ Convenience (Minimal effort/complexity)
+       ☐ Safety/Security (Risk minimization)
+       ☐ Sustainability (Eco-friendly options)
+       ☐ Local/Nearby (Minimize travel distance)
+       ☐ Flexibility (Easily adjustable schedule)
+       ☐ Privacy (Confidential/discreet)
+       ☐ Social/Collaborative (Team involvement)
+       
+       D. RESOURCE CONSTRAINTS (Multi-select checkboxes):
+       Known limitations:
+       ☐ Limited team/help available
+       ☐ Must work around existing commitments
+       ☐ Physical location restrictions
+       ☐ Technology/equipment limitations
+       ☐ Skill/knowledge gaps to address
+       ☐ Legal/regulatory requirements
+       ☐ Dependency on third parties
+       ☐ Weather/seasonal considerations
+       ☐ Health/accessibility needs
+       ☐ Cultural/religious considerations
+       
+       E. ADDITIONAL CONSTRAINTS (Free-text textarea, 2 rows):
+       - Placeholder: "Any other specific requirements, preferences, or constraints?"
+     
+     * Chevron rotates to ▲ when expanded
+     * "(Optional)" badge next to "Advanced Options"
+     * "Reset to Defaults" link at bottom of expanded section
+
+=== TECHNICAL IMPLEMENTATION ===
+
+REQUIRED LIBRARIES:
+{ "dependencies": { "next": "^15.0.0", "react": "^18.3.0", "typescript": "^5.0.0", "@react-pdf/renderer": "^3.4.0", "tailwindcss": "^3.4.0", "lucide-react": "latest", "framer-motion": "latest", "date-fns": "latest" } }
+
+
+text
+COMPONENT STRUCTURE:
+- Create reusable components:
+  * TaskCard.tsx
+  * PhaseAccordion.tsx
+  * PlanCard.tsx
+  * FilterPanel.tsx
+  * PDFExportModal.tsx
+  * ViewToggle.tsx
+  * ProgressBar.tsx
+  * StatusBadge.tsx
+  * PriorityBadge.tsx
+
+MOCK API ENDPOINTS:
+// POST /api/generate-plan interface GeneratePlanRequest { goal: string; timeframe?: string; budget?: number; constraints?: string; }
+// Response structure interface TaskPlan { project_summary: { goal: string; total_tasks: number; total_estimated_hours: number; estimated_completion_date: string; phases: number; }; phases: Array<{ phase_id: string; phase_name: string; description: string; tasks: Array<{ task_id: string; task_name: string; description: string; estimated_hours: number; deadline: string; dependencies: string[]; priority: 'high' | 'medium' | 'low'; status: 'not_started' | 'in_progress' | 'completed'; }>; }>; critical_path: string[]; }
+
+
+text
+PDF GENERATION:
+- Use @react-pdf/renderer
+- Create separate PDF components:
+  * PDFDocument.tsx (wrapper)
+  * PDFHeader.tsx (title, date, summary)
+  * PDFTaskList.tsx (formatted task sections)
+  * PDFTimeline.tsx (visual timeline)
+  * PDFFooter.tsx (page numbers)
+- Professional styling with proper margins
+- Page break logic for long task lists
+- Print-friendly color scheme
+
+STATE MANAGEMENT:
+- Use React Context for global state (theme, user preferences)
+- useState for local component state
+- useEffect for data fetching
+- Local storage persistence for plans and settings
+
+ACCESSIBILITY:
+- ARIA labels on all interactive elements
+- Keyboard navigation support (Tab, Enter, Escape)
+- Focus indicators on interactive elements
+- Screen reader friendly announcements
+- Sufficient color contrast
+- Skip to main content link
+
+=== EXAMPLE USER FLOWS ===
+
+FLOW 1: Create New Plan
+1. User lands on dashboard (empty state if first time)
+2. Clicks "Create New Plan" button or Quick Add FAB
+3. Enters goal: "Find lowest-cost turf near me for weekly football"
+4. Optional: Sets timeframe "This week", budget "₹2000"
+5. Clicks "Generate Plan"
+6. Loading animation (3-5 seconds)
+7. Redirects to plan view showing tasks
+8. User can immediately start checking off tasks
+
+FLOW 2: View and Manage Existing Plan
+1. User on dashboard sees plan card "Trip to New Jersey"
+2. Clicks card to open plan details
+3. Views tasks in List view (default)
+4. Clicks Kanban toggle to see board view
+5. Drags task from "To Do" to "In Progress"
+6. Checks off completed task
+7. Confetti animation appears when phase completes
+8. Clicks "Download PDF" to export plan
+
+FLOW 3: Filter and Search
+1. User has 10+ plans on dashboard
+2. Types "dentist" in search bar
+3. Results filter to show relevant plans
+4. Clicks category filter "Health"
+5. Clicks sort dropdown "Deadline (soonest first)"
+6. Stars important plan
+7. Clicks "Starred Only" toggle to see favorites
+
+=== DELIVERABLES ===
+
+Generate the following:
+1. Complete Next.js app structure with all pages/components
+2. Fully styled responsive UI matching design specifications
+3. Interactive features (drag-drop, filtering, searching)
+4. PDF export functionality
+5. Mock data for demonstration (3-4 sample plans)
+6. Loading states and empty states
+7. Dark mode support
+8. Mobile-responsive design
+9. TypeScript interfaces for all data structures
+10. README with setup instructions
+
+PRIORITY ORDER:
+1. Goal input + task display (List view)
+2. Dashboard with plan cards
+3. PDF export functionality
+4. Multiple view modes (Kanban, Timeline, Calendar)
+5. Filtering and search
+6. Mobile responsiveness
+7. Advanced features (drag-drop, bulk actions)
+
+Make this a production-ready, professional SaaS application that works for ANY type of goal planning - from travel and health to sports and events. Focus on clean code, excellent UX, and visual polish.
+

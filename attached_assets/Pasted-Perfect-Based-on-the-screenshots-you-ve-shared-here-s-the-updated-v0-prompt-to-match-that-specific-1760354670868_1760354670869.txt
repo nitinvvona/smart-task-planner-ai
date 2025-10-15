@@ -1,0 +1,652 @@
+Perfect! Based on the screenshots you've shared, here's the updated v0 prompt to match that specific UI style with the sidebar navigation, plan cards grid, and Kanban/Timeline sections:
+
+---
+
+## Complete v0 Prompt for Universal Smart Task Planner (UI Style from Screenshots)
+
+```
+Create a comprehensive Smart Task Planner web application using Next.js 15, React, TypeScript, Tailwind CSS, and shadcn/ui components matching the provided UI design style.
+
+=== PRODUCT OVERVIEW ===
+An AI-powered universal task planning system that breaks down ANY user goal (travel planning, booking services, organizing events, learning projects, etc.) into actionable tasks with timelines, dependencies, and priorities using LLM reasoning.
+
+=== DESIGN REFERENCE ===
+Match the exact UI style from the provided screenshots:
+- Gradient header (purple-to-cyan gradient like in SaaS example)
+- Left sidebar navigation (dark/colored background)
+- Main content area with white/light background
+- Card-based plan grid layout
+- Integrated Gantt timeline chart
+- Kanban board section
+- Clean, modern glassmorphism aesthetic
+- Purple-blue-cyan color scheme
+
+=== LAYOUT STRUCTURE ===
+
+HEADER (Top bar with gradient):
+- Logo with icon on left (graduation cap or task icon)
+- App name: "Smart Task Planner" or custom brand name
+- Right side: Search icon, Settings icon, Profile avatar
+- Full-width gradient background (purple #6366f1 to cyan #06b6d4)
+- Fixed position, stays visible on scroll
+
+LEFT SIDEBAR NAVIGATION:
+- Fixed sidebar (240px width on desktop)
+- Dark background (#1e293b or similar)
+- Navigation menu items with icons:
+  * Home (house icon)
+  * Mode selector dropdown (showing current mode)
+  * Recent (clock icon)
+  * Dashboard (grid icon)
+  * Tasks (checklist icon)
+  * Settings (gear icon)
+- Active item highlighted with accent color
+- Collapsible on mobile (hamburger menu)
+
+MAIN CONTENT AREA:
+- White/light gray background (#f8fafc)
+- Padding and generous spacing
+- Scrollable content
+
+=== CORE FUNCTIONALITY ===
+
+1. GOAL INPUT SCREEN (Initial/Create New Plan):
+
+   CENTERED MODAL/CARD STYLE:
+   - Large centered card with glassmorphism effect
+   - Gradient glow/blur effects around card (purple and blue halos like in screenshot)
+   - Card contents:
+     * "Goal" heading (large, bold)
+     * Large textarea (5-6 rows) with placeholder:
+       "Enter your goal here..."
+     * Character counter (0/500) bottom right
+     
+     * "Advanced Options" collapsible section (collapsed by default):
+       - Click to expand with smooth animation
+       - When expanded shows:
+         
+         TIMEFRAME SELECTOR (Dropdown with icon):
+         - This week
+         - 2 weeks  
+         - 1 month
+         - 3 months
+         - 6 months
+         - 1 year
+         - Custom (date picker)
+         
+         BUDGET CONSTRAINT:
+         - Amount input field
+         - Currency dropdown (USD, INR, EUR, GBP, AUD, CAD)
+         - "No budget limit" checkbox
+         
+         PRIORITY FOCUS (Multi-select chips/badges, max 3):
+         Create visual pill-shaped chips that can be clicked:
+         • Speed/Time
+         • Cost Efficiency  
+         • Quality/Excellence
+         • Convenience
+         • Safety/Security
+         • Sustainability
+         • Local/Nearby
+         • Flexibility
+         • Privacy
+         • Social/Collaborative
+         
+         RESOURCE CONSTRAINTS (Multi-select chips/badges):
+         • Limited team/help available
+         • Work around existing commitments
+         • Physical location restrictions
+         • Technology/equipment limitations
+         • Skill/knowledge gaps
+         • Legal/regulatory requirements
+         • Third-party dependencies
+         • Weather/seasonal factors
+         • Health/accessibility needs
+         • Cultural/religious considerations
+         
+         ADDITIONAL CONSTRAINTS (Textarea, 2 rows):
+         - Placeholder: "Any other requirements or preferences?"
+         
+         "Reset to Defaults" link at bottom
+     
+     * "Generate Plan" button (large, full-width, gradient purple-blue)
+       - Loading spinner state when processing
+       - Disabled if textarea empty
+     
+     * "Use Template" button (outline style, below Generate Plan)
+       - Opens template gallery modal
+
+2. TEMPLATE GALLERY MODAL:
+   - Overlay modal with close X button
+   - Grid of template cards (3-4 columns on desktop):
+     * Travel Planning (✈️ icon)
+     * Health & Medical (❤️ icon)
+     * Sports & Recreation (🏋️ icon)
+     * Home Services (🔧 icon)
+     * Event Planning (📅 icon)
+     * Learning & Development (📚 icon)
+     * Shopping & Errands (🛒 icon)
+     * Career & Professional (💼 icon)
+     * Finance & Investment (💰 icon)
+     * Home Improvement (🏠 icon)
+   - Each card: icon, category name, example text, "Use" button
+   - Click card to auto-fill and close modal
+
+3. DASHBOARD VIEW (Like screenshot 2):
+
+   LAYOUT STRUCTURE:
+   - "Task Planner" heading (top left of content area)
+   - Filters/actions row below heading:
+     * Search bar with icon
+     * "Settion" or Section button (purple gradient)
+     * Filter dropdown
+   
+   PLAN CARDS GRID:
+   - Grid layout (3 columns on desktop, 2 on tablet, 1 on mobile)
+   - Each plan card displays:
+     * Status icon (checkmark circle, emoji, or colored icon top-right)
+     * "Plans XX/XX" title (e.g., "Plans 20/21")
+     * "Progress: XX%" subtitle
+     * Progress bar (gradient, matches card theme)
+     * Card background has subtle gradient or solid color
+     * Hover effect (lift/shadow)
+   - Different colored cards (blue, purple, yellow, cyan themes)
+   - Some cards show completion checkmarks
+
+   VISUALIZATION SECTIONS (Below plan cards):
+   
+   GANTT TIMELINE CHART:
+   - "Gant Timme" heading (or "Gantt Timeline")
+   - Line chart visualization showing timeline
+   - Purple gradient line with data points
+   - Y-axis labels (time units)
+   - X-axis labels (dates/milestones)
+   - "Security" badge/marker on chart
+   - Search and control icons (top right of chart)
+   - White background card container
+   
+   SPECIAL FEATURE CARDS (Left side):
+   - "Gantt | Board Timbed" card (purple gradient background)
+   - "Glassmoldin Timork" card (cyan/turquoise gradient)
+   - Rounded corners, glassmorphism style
+   - Icon or minimal text
+
+   KANBAN SECTION (Right sidebar):
+   - "Canbain" or "Kanban" heading
+   - Four columns visible:
+     * Progressess (In Progress)
+     * AppurateRecord (Accurate Record)
+     * blsade professor (Blade Processor)
+     * AcurineClass (Aquarine Class)
+     * VarnBar Facing
+   - Each column has:
+     * Colored document/file icon
+     * Column name
+     * "Start" link/button (cyan color)
+   - "Download2" section with multiple items listed
+   - "Download PD" button at bottom (purple gradient, prominent)
+
+4. INDIVIDUAL PLAN VIEW:
+
+   HEADER SECTION:
+   - Breadcrumb: Dashboard > [Category] > [Plan Name]
+   - Plan title (editable inline)
+   - Category badge with icon
+   - Progress summary with circular progress or bar
+   - Action buttons row:
+     * Download PDF (purple gradient, primary)
+     * Export dropdown (CSV, JSON)
+     * Share button
+     * Archive/Delete
+
+   VIEW MODE TABS (Like screenshot - horizontal tabs):
+   - List | Kanban | Calendar | Timeline
+   - Active tab underlined or highlighted
+   - Smooth transition between views
+
+   LIST VIEW:
+   - Phase accordions (expand/collapse)
+   - Task cards with:
+     * Large checkbox (left)
+     * Task name (bold)
+     * Priority badge (colored pill)
+     * Description (truncated with "Read more")
+     * Estimated time badge
+     * Deadline with countdown
+     * Dependency icon with tooltip
+     * Edit/delete icons (right side)
+     * Drag handle (left side)
+
+   KANBAN VIEW:
+   - Three columns: To Do, In Progress, Done
+   - Draggable cards
+   - Column headers show count
+   - Card shows: title, priority, deadline, time estimate
+
+   CALENDAR VIEW:
+   - Monthly grid
+   - Colored dots on dates with tasks
+   - Click date to expand tasks
+
+   TIMELINE/GANTT VIEW:
+   - Like the "Gant Timme" chart in screenshot
+   - Horizontal bars with dates
+   - Dependencies shown as connecting lines
+   - Critical path highlighted
+
+5. PDF EXPORT MODAL:
+   - Modal overlay
+   - Format selection (radio buttons):
+     * Detailed Report
+     * Summary Checklist  
+     * Timeline View
+     * Budget Report
+   - Content checkboxes (what to include)
+   - File name input
+   - Preview pane (optional)
+   - Download button (purple gradient)
+
+=== DESIGN SPECIFICATIONS ===
+
+COLOR SCHEME (Match screenshots exactly):
+- Header gradient: Purple (#6366f1) to Cyan (#06b6d4)
+- Sidebar: Dark slate (#1e293b to #0f172a)
+- Primary buttons: Purple-blue gradient (#8b5cf6 to #6366f1)
+- Accent: Cyan (#06b6d4)
+- Card backgrounds: White with subtle colored tints (purple, blue, yellow, cyan)
+- Success: Green (#22c55e)
+- Warning: Orange (#f59e0b)
+- Danger: Red (#ef4444)
+- Text: Dark gray (#1f2937) on light, White on dark
+
+VISUAL STYLE (Match screenshots):
+- Glassmorphism cards with backdrop-blur and semi-transparency
+- Gradient glow effects behind important elements
+- Soft, large shadows (shadow-2xl)
+- Extra rounded corners (rounded-2xl, rounded-3xl)
+- Smooth, fluid animations
+- Gradient backgrounds on feature cards
+- Progress bars with gradient fills
+- Pill-shaped badges and buttons
+- Clean white space and generous padding
+
+CARD STYLING:
+- White background with subtle colored border or top accent
+- Gradient progress bars inside cards
+- Icon badges in corners (checkmarks, emojis, status icons)
+- Hover effects: lift up slightly, increase shadow
+- Consistent card height in grid
+- Border radius: rounded-xl or rounded-2xl
+
+TYPOGRAPHY:
+- Headings: Inter or Poppins, semibold/bold, larger sizes
+- Body: Inter or System UI, regular
+- Small labels: 12-14px, medium weight
+- Monospace: For time/date displays
+- High contrast for readability
+
+ICONS:
+- lucide-react icon library
+- Consistent sizing (16px, 20px, 24px)
+- Colored icons matching theme (purple, blue, cyan)
+- Icon badges on cards (emoji or lucide icons)
+
+ANIMATIONS:
+- Framer Motion for:
+  * Card entrance animations (stagger effect)
+  * Modal open/close
+  * Confetti on completion
+  * Smooth transitions between views
+  * Loading skeletons with pulse
+  * Hover lift effects
+
+=== TECHNICAL IMPLEMENTATION ===
+
+REQUIRED LIBRARIES:
+```
+{
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^18.3.0",
+    "typescript": "^5.0.0",
+    "@react-pdf/renderer": "^3.4.0",
+    "tailwindcss": "^3.4.0",
+    "lucide-react": "latest",
+    "framer-motion": "latest",
+    "date-fns": "latest",
+    "recharts": "^2.10.0",
+    "react-beautiful-dnd": "^13.1.1"
+  }
+}
+```
+
+COMPONENT STRUCTURE:
+- Layout components:
+  * AppLayout.tsx (sidebar + header + main)
+  * Sidebar.tsx
+  * Header.tsx
+- Input components:
+  * GoalInputModal.tsx
+  * AdvancedOptionsPanel.tsx (collapsible)
+  * TemplateGallery.tsx
+- Dashboard components:
+  * PlanCard.tsx (matching screenshot card style)
+  * PlanGrid.tsx
+  * StatsCards.tsx
+  * GanttChart.tsx (using recharts)
+  * KanbanBoard.tsx
+- Plan view components:
+  * TaskCard.tsx
+  * PhaseAccordion.tsx
+  * ViewToggle.tsx (tabs)
+  * FilterPanel.tsx
+- Export components:
+  * PDFExportModal.tsx
+  * PDF components (@react-pdf/renderer)
+- Shared components:
+  * ProgressBar.tsx (gradient style)
+  * StatusBadge.tsx
+  * PriorityBadge.tsx
+  * Button.tsx (gradient variants)
+
+MOCK DATA (For demonstration):
+Create 9-12 sample plans showing:
+- Various completion percentages (13%, 25%, 55%, 88%, 100%)
+- Different categories (Travel, Health, Sports, Events, Learning)
+- Different status icons/colors
+- Some with checkmarks (completed)
+- Various progress states
+
+RESPONSIVE BEHAVIOR:
+- Desktop (1280px+): Full sidebar, 3-column grid, side-by-side Gantt + Kanban
+- Tablet (768-1279px): Collapsible sidebar, 2-column grid, stacked charts
+- Mobile (<768px): Hamburger menu, 1-column grid, swipeable views
+
+=== KEY PAGES/ROUTES ===
+
+1. "/" - Dashboard (Plan cards grid + Gantt + Kanban overview)
+2. "/create" - Goal input modal/page
+3. "/plan/[id]" - Individual plan detail view
+4. "/settings" - Settings panel
+5. "/archive" - Archived plans
+
+=== SPECIFIC UI ELEMENTS FROM SCREENSHOTS ===
+
+PLAN CARDS (Matching screenshot exactly):
+- Size: Consistent width and height
+- Layout:
+  * Top-right: Status icon/emoji/checkmark
+  * Center: "Plans XX/XX" text (bold, larger)
+  * Below: "Progress: XX%" (smaller, gray)
+  * Bottom: Gradient progress bar (rounded, 4-6px height)
+- Card colors:
+  * Blue tint cards
+  * Purple tint cards
+  * Yellow/gold tint cards
+  * Cyan/turquoise tint cards
+- Subtle background gradients or solid with colored accents
+- Shadow on hover
+
+GANTT CHART SECTION:
+- "Gantt Timeline" heading
+- Chart controls (search, zoom, expand icons) in top-right
+- Line chart with:
+  * Purple gradient line
+  * Data points/markers
+  * Y-axis: Time scale (0-1200)
+  * X-axis: Date/milestone markers (0-140 scale)
+  * Hoverable points showing values
+  * Badge/label on chart (e.g., "Security")
+- White card background
+- Rounded corners
+
+KANBAN/SIDEBAR SECTION (Right side):
+- "Kanban" heading
+- Status columns list:
+  * Each item: colored icon + name + "Start" link
+  * Icons: document/file style in various colors (red, purple, cyan, yellow, orange)
+  * Compact vertical list
+- "Download" section below
+  * List items with "Start" links
+  * Different tasks/files
+- "Download PD" button at bottom (purple gradient, prominent)
+
+SPECIAL FEATURE CARDS (Bottom left):
+- Two gradient cards side by side:
+  * "Gantt | Board Timed" (purple gradient)
+  * "Glassmoldin Timork" (cyan gradient)
+- Rounded corners (rounded-2xl)
+- White text
+- Glassmorphism/gradient fill
+- Decorative, not functional (or link to those views)
+
+=== INPUT FLOW ===
+
+1. GOAL INPUT SECTION (Modal or dedicated page):
+   
+   CENTERED CARD WITH GRADIENT GLOW:
+   - Large centered card (max-width 600px)
+   - Glassmorphism background (white with blur)
+   - Purple and blue gradient glow effects around card borders
+   
+   CARD CONTENTS:
+   - "Describe your goal" heading (or just "Goal")
+   - Large textarea (min 5 rows) with placeholder:
+     "Enter your goal (e.g., 'Find lowest-cost turf near me', 'Book skilled dentist appointment', 'Plan trekking trip to hills')"
+   - Character counter (0/500)
+   - "Template Gallery" button/link (top-right or below textarea)
+   
+   ADVANCED OPTIONS SECTION:
+   - "Advanced Options" text with chevron (▼/▲)
+   - "(Optional)" badge next to it
+   - Collapsed by default
+   - Click to expand with smooth slide animation
+   
+   EXPANDED ADVANCED OPTIONS:
+   Layout in two columns where possible:
+   
+   Column 1:
+   - TIMEFRAME dropdown (full width)
+     Options: This week, 2 weeks, 1 month, 3 months, 6 months, 1 year, Custom
+   
+   - BUDGET section:
+     * Amount input
+     * Currency dropdown (inline)
+     * "No budget limit" checkbox
+   
+   Column 2:
+   - PRIORITY FOCUS (multi-select pill chips):
+     "Select up to 3 priorities:"
+     Render as clickable pill badges that highlight when selected:
+     • Speed/Time
+     • Cost Efficiency
+     • Quality/Excellence
+     • Convenience
+     • Safety/Security
+     • Sustainability
+     • Local/Nearby
+     • Flexibility
+     • Privacy
+     • Social/Collaborative
+   
+   Full Width:
+   - RESOURCE CONSTRAINTS (multi-select pill chips):
+     "Known limitations (select all that apply):"
+     • Limited team/help available
+     • Must work around existing commitments
+     • Physical location restrictions
+     • Technology/equipment limitations
+     • Skill/knowledge gaps to address
+     • Legal/regulatory requirements
+     • Dependency on third parties
+     • Weather/seasonal considerations
+     • Health/accessibility needs
+     • Cultural/religious considerations
+   
+   - ADDITIONAL CONSTRAINTS (textarea, 2 rows)
+     Placeholder: "Any other specific requirements, preferences, or constraints?"
+   
+   - "Reset to Defaults" link (right-aligned, small, gray text)
+   
+   BUTTONS (Bottom of card):
+   - "Generate Plan" (primary, full-width, purple gradient, large)
+   - "Use Template" (secondary, full-width or side-by-side, outline style)
+
+2. TEMPLATE GALLERY MODAL:
+   - Full-screen overlay or large centered modal
+   - Grid of template cards (icon + title + example + button)
+   - Close X button top-right
+   - Categories from above list
+
+3. DASHBOARD/HOMEPAGE (Like screenshot):
+
+   TOP SECTION:
+   - Page heading: "Task Planner"
+   - Right side: Search bar, Action button, Filter dropdown
+   
+   PLAN CARDS GRID:
+   - 3 columns on desktop
+   - Each card styled exactly like screenshot:
+     * Status icon/checkmark (top-right)
+     * "Plans XX/XX" text
+     * "Progress: XX%" subtitle
+     * Gradient progress bar
+     * Themed background colors
+     * Hover lift effect
+   - Click card to open plan details
+   - Three-dot menu on hover for actions
+   
+   GANTT CHART SECTION:
+   - "Gantt Timeline" heading
+   - Controls (search, zoom, settings) top-right
+   - Line/area chart with purple gradient
+   - Data visualization matching screenshot style
+   - White card background with shadow
+   
+   KANBAN PREVIEW (Right sidebar or section):
+   - "Kanban" heading with arrow icon
+   - Vertical list of status items:
+     * Colored icon (document/file style)
+     * Status name
+     * "Start" link (cyan color)
+   - "Download" section with file list
+   - "Download PD" button (purple gradient, prominent)
+
+   DECORATIVE CARDS:
+   - "Gantt | Board" card (purple gradient)
+   - "Glassmoldin" or feature card (cyan gradient)
+   - Positioned at bottom or as feature highlights
+
+4. INDIVIDUAL PLAN VIEW:
+
+   HEADER BAR:
+   - Breadcrumb navigation
+   - Plan title (large, editable inline)
+   - Category badge
+   - Progress summary: "12 of 18 tasks (67%)"
+   - Action buttons:
+     * Download PDF (purple gradient)
+     * Export (dropdown)
+     * Share
+     * Archive
+
+   VIEW TABS (Horizontal, like screenshot):
+   - List | Kanban | Calendar | Timeline
+   - Active tab highlighted with underline or background
+   - Clean tab design
+
+   FILTERS (Below tabs or collapsible sidebar):
+   - Search tasks input
+   - Status dropdown ("All statuses")
+   - Priority dropdown ("All")
+   - Date range picker
+   - "Reset" and "Apply" buttons
+
+   CONTENT AREA (Changes based on active tab):
+   - LIST: Phase accordions with task cards
+   - KANBAN: Three columns with draggable cards
+   - CALENDAR: Monthly grid with task dots
+   - TIMELINE: Gantt bars with dependencies
+
+5. MOBILE RESPONSIVE:
+   - Hamburger menu for sidebar
+   - Bottom tab navigation (Dashboard, Plans, Calendar, Profile)
+   - Stacked single-column cards
+   - Swipe gestures on tasks
+   - Touch-friendly sizes (44px minimum)
+
+=== INTERACTIVE FEATURES ===
+
+- Inline editing (click to edit task names)
+- Drag-and-drop (tasks, Kanban cards)
+- Bulk selection mode (checkbox mode)
+- Auto-save with indicator
+- Undo functionality
+- Keyboard shortcuts (? for help)
+- Toast notifications
+- Confetti animation on completion
+- Loading skeletons while generating
+
+=== PDF EXPORT ===
+
+Use @react-pdf/renderer to create:
+- PDFDocument.tsx with professional layout
+- Include: header, summary, phases, tasks, timeline, dependencies
+- Print-friendly styling
+- Page breaks for long content
+- Footer with page numbers
+
+=== ACCESSIBILITY ===
+
+- ARIA labels on all interactive elements
+- Keyboard navigation (Tab, Enter, Escape, Arrow keys)
+- Focus indicators (visible outline)
+- Screen reader announcements
+- Color contrast WCAG AA compliant
+- Skip to content link
+
+=== MOCK DATA ===
+
+Create 9-12 sample plans with:
+- Various completion rates (13%, 25%, 55%, 88%, 100%)
+- Different categories
+- Realistic task breakdowns
+- Some completed plans with checkmarks
+- Mix of simple and complex plans
+
+=== DELIVERABLES ===
+
+1. Complete Next.js app structure
+2. All pages and components
+3. Fully styled UI matching screenshot aesthetic
+4. Interactive features working
+5. PDF export functional
+6. Mock data populated
+7. Loading and empty states
+8. Dark mode support (optional)
+9. Mobile responsive
+10. TypeScript interfaces
+11. README with setup
+
+=== PRIORITY ORDER ===
+
+1. Goal input form with collapsible Advanced Options (20 constraint choices)
+2. Dashboard with plan card grid matching screenshot style
+3. Sidebar navigation
+4. Individual plan view with List/Kanban/Timeline tabs
+5. PDF export functionality
+6. Gantt chart visualization
+7. Filters and search
+8. Mobile responsiveness
+9. Advanced interactions (drag-drop, bulk actions)
+10. Polish and animations
+
+CRITICAL: Match the exact visual style from the screenshots - gradient header, sidebar navigation, card grid layout, Gantt chart section, Kanban sidebar, gradient buttons, glassmorphism effects, and color scheme. The UI should feel modern, professional, and polished like a premium SaaS product.
+```
+
+***
+
+This updated prompt incorporates the exact UI style from your screenshots, including the sidebar navigation, plan card grid layout, Gantt timeline visualization, Kanban section, and the overall gradient/glassmorphism aesthetic. The Advanced Options now include the 20 common constraint choices presented as clickable pill chips for better UX.
+
+[1](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/97195758/edcbd9d7-56ab-4975-a6da-69096d199275/Screenshot-2025-10-13-at-4.34.50-PM.jpg?AWSAccessKeyId=ASIA2F3EMEYEVZFJTAFC&Signature=6PUgFOksYeQWTUTeo%2B%2FloSBmIh8%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIAoEXDp4nJJrU2H2RkcGArVj2ubQqqwpvm3VrRhoty2QAiEA5OoDcItmCTWm%2FUPg8NVcy3%2FdfQbalazuM69JZ3pfQO0q8QQIRBABGgw2OTk3NTMzMDk3MDUiDOBzb5jjHCxn5HSjjSrOBHWQTCSQtLp6DXHmJRZvKGKrGOCTjtLWWnG4iLwxpBes4l0EQge2mevidItOn65NAPz08bRTnI54ke6XieeIuwtWuOLKklvGtcTXMxG7kuz4ak6KRdmW6h79BzesJNqqge23vmCuu9Aj5AQiM7I4sJxf547KiSBBF5EqxCEKnM1Quj4folqzOfL7dURoKm3%2Fr8odoOkb1UcotY%2FiFbpLKbL1cGq2gqskwXbsogagG5VgmyGbNKYnbEo%2B28JGsQGehiOirQw2I4iEW9W8D90HI55cqN9qfxbuUj4Q8KTySKnaiVnrdM%2F3U4yfrSvYMpdiVTpUxc83DU4wKh447eKx8RelV3E7Thm%2B8ODAcFAq3YAvEP9Bx1FrHKbiJcta%2F89diOY684zQBLwvaWW8r0mYwnX4g6JkgOe3yPpu79JA24eVZSt73S0gJtrvy2UrjqCl5MtY9l0wd918AsaXL9o9MqoFfat%2B7pHW1aH4EymRtDB1QaH2i5Q%2FV5HZiLsEv6uCQhEJRU8sKSGne4cfnfbJxUSypR%2BF4tmpBRFsbb8CtJt9ukQ8Id8e6nUEi15UBJlZ8WYI2KRvchD5pmSFnkU9BSJv65Tw0pA%2BGL%2BlDxPAh4FBNjx5x6KlLU455n4emnHbxiDjoqPRrtq9f0trjAWKsFpYzl7AWbhHkQhPQd5mEVZj1VPbE1wrJcgY5%2BwYl6H9HK07zZ%2BXldlxExRU%2B4wvMXJ90ld%2FZwFUSKCs87qzxnHHH%2BOf9Ox48IDKrVHPkf2U76w4NfRopYWQifWn9E%2FOMJSys8cGOpoBAQpFwYTfXcXFmG%2F4r8qXiMf9P7pzHg%2Brz%2FrARUcNajZs%2FuKv2nU37%2FVoxfunqKEp8cVmp32Hj9slNdD%2BXvtvJQL17v%2FUzj8XzL9RW5q3sBm1tVD3qX3cSjixXivMSc9QlebCDA4Mafj6JJp72I9HvSz5qMJ7NYBC4YKg8y%2BALJeABf6bA1D4n958%2BzgnFO0clX6gRNY5B5fevA%3D%3D&Expires=1760354257)
+[2](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/97195758/bd8aff90-b9f6-4f74-9d8d-b51737a38008/Screenshot-2025-10-13-at-4.34.16-PM.jpg?AWSAccessKeyId=ASIA2F3EMEYEVZFJTAFC&Signature=MmptasNIzBB8472a7lLSJdbGCqk%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIAoEXDp4nJJrU2H2RkcGArVj2ubQqqwpvm3VrRhoty2QAiEA5OoDcItmCTWm%2FUPg8NVcy3%2FdfQbalazuM69JZ3pfQO0q8QQIRBABGgw2OTk3NTMzMDk3MDUiDOBzb5jjHCxn5HSjjSrOBHWQTCSQtLp6DXHmJRZvKGKrGOCTjtLWWnG4iLwxpBes4l0EQge2mevidItOn65NAPz08bRTnI54ke6XieeIuwtWuOLKklvGtcTXMxG7kuz4ak6KRdmW6h79BzesJNqqge23vmCuu9Aj5AQiM7I4sJxf547KiSBBF5EqxCEKnM1Quj4folqzOfL7dURoKm3%2Fr8odoOkb1UcotY%2FiFbpLKbL1cGq2gqskwXbsogagG5VgmyGbNKYnbEo%2B28JGsQGehiOirQw2I4iEW9W8D90HI55cqN9qfxbuUj4Q8KTySKnaiVnrdM%2F3U4yfrSvYMpdiVTpUxc83DU4wKh447eKx8RelV3E7Thm%2B8ODAcFAq3YAvEP9Bx1FrHKbiJcta%2F89diOY684zQBLwvaWW8r0mYwnX4g6JkgOe3yPpu79JA24eVZSt73S0gJtrvy2UrjqCl5MtY9l0wd918AsaXL9o9MqoFfat%2B7pHW1aH4EymRtDB1QaH2i5Q%2FV5HZiLsEv6uCQhEJRU8sKSGne4cfnfbJxUSypR%2BF4tmpBRFsbb8CtJt9ukQ8Id8e6nUEi15UBJlZ8WYI2KRvchD5pmSFnkU9BSJv65Tw0pA%2BGL%2BlDxPAh4FBNjx5x6KlLU455n4emnHbxiDjoqPRrtq9f0trjAWKsFpYzl7AWbhHkQhPQd5mEVZj1VPbE1wrJcgY5%2BwYl6H9HK07zZ%2BXldlxExRU%2B4wvMXJ90ld%2FZwFUSKCs87qzxnHHH%2BOf9Ox48IDKrVHPkf2U76w4NfRopYWQifWn9E%2FOMJSys8cGOpoBAQpFwYTfXcXFmG%2F4r8qXiMf9P7pzHg%2Brz%2FrARUcNajZs%2FuKv2nU37%2FVoxfunqKEp8cVmp32Hj9slNdD%2BXvtvJQL17v%2FUzj8XzL9RW5q3sBm1tVD3qX3cSjixXivMSc9QlebCDA4Mafj6JJp72I9HvSz5qMJ7NYBC4YKg8y%2BALJeABf6bA1D4n958%2BzgnFO0clX6gRNY5B5fevA%3D%3D&Expires=1760354257)
