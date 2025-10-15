@@ -5,11 +5,6 @@ Here's a comprehensive README.md file for your Smart Task Planner AI project:
 
 An intelligent task management application powered by Google's Gemini AI that transforms your goals into actionable, organized task plans. Built with React, TypeScript, and Express.
 
-![Smart Task Planner](https://img.shields.io/badge/AI-Powered-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
-![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)
-
 ## ✨ Features
 
 ### 🤖 AI-Powered Task Generation
@@ -258,34 +253,7 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- **Google Gemini AI** for task generation
-- **shadcn/ui** for beautiful UI components
-- **Lucide Icons** for icon library
-- **TailwindCSS** for styling utilities
-
-## 📧 Contact
-
-Your Name - [@yourhandle](https://twitter.com/yourhandle)
-
-Project Link: [https://github.com/yourusername/smart-task-planner-ai](https://github.com/yourusername/smart-task-planner-ai)
-
 ---
 
-Made with ❤️ and AI
-```
 
-This README includes:
-- ✅ Clear project description
-- ✅ Comprehensive feature list
-- ✅ Tech stack details
-- ✅ Installation instructions
-- ✅ Usage guide
-- ✅ Project structure
-- ✅ API documentation
-- ✅ Development instructions
-- ✅ Contributing guidelines
-- ✅ Professional formatting with badges and emojis
 
-You can customize the GitHub username, Twitter handle, and other personal details before publishing!
