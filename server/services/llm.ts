@@ -295,11 +295,12 @@ Return ONLY the improved description, nothing else.`;
     console.log('Requesting task improvements for:', taskDescription);
 
     const response = await axios.post<GenerateContentResponse>(
-      `${FLASH_MODEL_ENDPOINT}?key=${GOOGLE_API_KEY}`,
+      FLASH_MODEL_ENDPOINT,
       requestData,
       {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'x-goog-api-key': GOOGLE_API_KEY
         }
       }
     );
