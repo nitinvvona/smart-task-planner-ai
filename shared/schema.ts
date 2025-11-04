@@ -37,7 +37,7 @@ export const tasks = pgTable("tasks", {
   estimated_hours: numeric("estimated_hours", { precision: 5, scale: 2 }),
   deadline: timestamp("deadline"),
   status: text("status").notNull().default('not_started'), // 'not_started', 'in_progress', 'completed'
-  dependencies: text("dependencies", { mode: 'array' }), // array of task ids
+  dependencies: text("dependencies").array(), // array of task ids
   phase: text("phase"), // phase name for grouping tasks
 });
 

@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Plan, type Task, type InsertPlan } from "@shared/schema";
+import { type User, type InsertUser, type Plan, type Task, type InsertPlan, type InsertTask } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 // modify the interface with any CRUD methods
@@ -59,7 +59,13 @@ export class MemStorage implements IStorage {
 
   async createPlan(insertPlan: InsertPlan & { user_id: string }): Promise<Plan> {
     const id = randomUUID();
-    const plan: Plan = { ...insertPlan, id, created_at: new Date(), updated_at: new Date() };
+    const plan: Plan = {
+      ...insertPlan,
+      id,
+      category: insertPlan.category ?? null,
+      created_at: new Date(),
+      updated_at: new Date()
+    };
     this.plans.set(id, plan);
     return plan;
   }
@@ -79,7 +85,16 @@ export class MemStorage implements IStorage {
 
   async createTask(insertTask: InsertTask): Promise<Task> {
     const id = randomUUID();
-    const task: Task = { ...insertTask, id };
+    const task: Task = {
+      ...insertTask,
+      id,
+      description: insertTask.description ?? null,
+      estimated_hours: insertTask.estimated_hours ?? null,
+      deadline: insertTask.deadline ?? null,
+      dependencies: insertTask.dependencies ?? null,
+      phase: insertTask.phase ?? null,
+      status: insertTask.status ?? 'not_started'
+    };
     this.tasks.set(id, task);
     return task;
   }

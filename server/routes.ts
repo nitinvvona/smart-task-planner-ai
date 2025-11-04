@@ -268,7 +268,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           estimated_hours: t.estimated_hours?.toString() || '1',
           deadline: t.deadline && !isNaN(new Date(t.deadline).getTime()) ? new Date(t.deadline) : undefined,
           status: 'not_started',
-          dependencies: [],
+          dependencies: undefined,
           phase: t.phase || 'General',
         };
         const newTask = await storage.createTask(insertTask);
